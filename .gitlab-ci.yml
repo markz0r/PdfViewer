@@ -30,7 +30,7 @@ build_android:
   script:
     - ./gradlew build --no-daemon
   artifacts:
-    when: always
+    when: on_success
     paths:
       - app/build/outputs/apk/
       - app/build/reports/

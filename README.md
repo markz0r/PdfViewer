@@ -17,8 +17,9 @@ would have within the browser.
 ## CI builds
 
 The project is built as an Android APK. The GitHub Actions workflow in
-`.github/workflows/build.yml` runs the build on a Windows 11 x86_64 runner and
-publishes the APK outputs from `app/build/outputs/apk/` as workflow artifacts.
+`.github/workflows/build.yml` runs the build on the GitHub-hosted
+`windows-2022` x86_64 runner and publishes the APK outputs from
+`app/build/outputs/apk/` as workflow artifacts.
 
 ## Windows builds
 

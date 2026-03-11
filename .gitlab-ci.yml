@@ -1,0 +1,31 @@
+image: ghcr.io/cirruslabs/android-sdk:34
+
+stages:
+  - build
+
+variables:
+  GRADLE_USER_HOME: "$CI_PROJECT_DIR/.gradle"
+  npm_config_cache: "$CI_PROJECT_DIR/.npm"
+
+cache:
+  key: "$CI_COMMIT_REF_SLUG"
+  paths:
+    - .gradle/wrapper
+    - .gradle/caches
+    - .npm
+    - node_modules/
+
+before_script:
+  - chmod +x ./gradlew
+  - node --version || (apt-get update && apt-get install -y nodejs npm)
+
+build_android:
+  stage: build
+  script:
+    - ./gradlew build --no-daemon
+  artifacts:
+    when: always
+    paths:
+      - app/build/outputs/apk/
+      - app/build/reports/
+    expire_in: 1 week

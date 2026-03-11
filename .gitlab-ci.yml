@@ -17,6 +17,7 @@ cache:
 
 before_script:
   - chmod +x ./gradlew
+  # Node.js is required for process_static.js (eslint + esbuild) during Gradle builds.
   - |
       if ! command -v node >/dev/null 2>&1; then
         apt-get update

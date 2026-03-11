@@ -35,4 +35,4 @@ build_android:
     paths:
       - app/build/outputs/apk/
       - app/build/reports/
-    expire_in: 1 week
+    expire_in: 30 days

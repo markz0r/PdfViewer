@@ -22,8 +22,8 @@ outputs from `app/build/outputs/apk/` as job artifacts.
 
 ## Windows builds
 
-This repository targets Android only and does not produce a Windows 11 x86_64
-portable EXE or MSI. Creating a Windows installer would require a separate
+This repository targets Android only and does not produce a Windows portable
+EXE or MSI. Creating a Windows installer would require a separate
 desktop application (for example, an Electron/WebView2-based wrapper) that
 reuses the `viewer/` assets and implements native Windows file handling. That
 desktop packaging work is outside the scope of this Android project.

@@ -16,9 +16,9 @@ would have within the browser.
 
 ## CI builds
 
-The project is built as an Android APK. The GitLab pipeline in
-`.gitlab-ci.yml` mirrors the GitHub Actions build and publishes the APK build
-outputs from `app/build/outputs/apk/` as job artifacts.
+The project is built as an Android APK. The GitHub Actions workflow in
+`.github/workflows/build.yml` runs the build on a Windows 11 x86_64 runner and
+publishes the APK outputs from `app/build/outputs/apk/` as workflow artifacts.
 
 ## Windows builds
 

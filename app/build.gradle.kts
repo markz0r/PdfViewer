@@ -74,11 +74,40 @@ android {
                 signingConfig = signingConfigs.getByName("play")
             }
         }
+    }
 
-        buildFeatures {
-            viewBinding = true
-            buildConfig = true
-            resValues = true
+    buildFeatures {
+        viewBinding = true
+        buildConfig = true
+        resValues = true
+    }
+
+    // Enable ABI splits for smaller APK size
+    splits {
+        abi {
+            isEnabled = true
+            reset()
+            include("arm64-v8a", "armeabi-v7a", "x86_64", "x86")
+            isUniversalApk = true
+        }
+    }
+
+    // Optimize APK packaging
+    packaging {
+        resources {
+            excludes += listOf(
+                "META-INF/*.kotlin_module",
+                "META-INF/DEPENDENCIES",
+                "META-INF/LICENSE",
+                "META-INF/LICENSE.txt",
+                "META-INF/NOTICE",
+                "META-INF/NOTICE.txt",
+                "META-INF/*.properties",
+                "kotlin/**"
+            )
+        }
+        jniLibs {
+            useLegacyPackaging = false
         }
     }
 

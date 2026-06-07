@@ -320,6 +320,14 @@ public class PdfViewer extends AppCompatActivity implements LoaderManager.Loader
         settings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.NORMAL);
         settings.setMinimumFontSize(1);
 
+        // Additional security hardening
+        settings.setDatabaseEnabled(false);
+        settings.setDomStorageEnabled(false);
+        settings.setGeolocationEnabled(false);
+        settings.setSaveFormData(false);
+        settings.setMixedContentMode(WebSettings.MIXED_CONTENT_NEVER_ALLOW);
+        settings.setMediaPlaybackRequiresUserGesture(true);
+
         CookieManager.getInstance().setAcceptCookie(false);
 
         binding.webview.addJavascriptInterface(new Channel(), "channel");

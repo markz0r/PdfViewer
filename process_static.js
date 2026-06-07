@@ -84,6 +84,11 @@ async function processScripts(options) {
         outdir: path.join(options.outDir, "js"),
         minify: options.production,
         sourcemap: options.production ? false : "inline",
+        // Additional optimizations for production
+        treeShaking: true,
+        legalComments: "none",
+        mangleProps: options.production ? /^_/ : undefined,
+        drop: options.production ? ["console", "debugger"] : [],
     });
 }
 

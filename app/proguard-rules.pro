@@ -18,9 +18,6 @@
     public static *** e(...);
 }
 
-# Optimize string concatenation
--optimizations !code/simplification/string
-
 # Remove unused code more aggressively
 -dontwarn javax.annotation.**
 -dontwarn org.jetbrains.annotations.**

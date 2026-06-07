@@ -85,7 +85,7 @@ android {
     // Enable ABI splits for smaller APK size
     splits {
         abi {
-            isEnable = true
+            isEnabled = true
             reset()
             include("arm64-v8a", "armeabi-v7a", "x86_64", "x86")
             isUniversalApk = true

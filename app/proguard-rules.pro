@@ -9,13 +9,12 @@
 -repackageclasses ''
 -allowaccessmodification
 
-# Remove logging in release builds for speed and security
+# Remove debug/verbose/info logging in release builds for speed
+# Keep error and warning logs for production debugging
 -assumenosideeffects class android.util.Log {
     public static *** d(...);
     public static *** v(...);
     public static *** i(...);
-    public static *** w(...);
-    public static *** e(...);
 }
 
 # Remove unused code more aggressively

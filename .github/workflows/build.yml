@@ -24,7 +24,7 @@ jobs:
           cache: gradle
 
       - name: Build with Gradle
-        run: .\gradlew.bat build --no-daemon --parallel --build-cache --configuration-cache
+        run: .\gradlew.bat build --parallel --build-cache --configuration-cache
         
       - name: Upload APK artifacts
         uses: actions/upload-artifact@v4

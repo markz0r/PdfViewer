@@ -102,9 +102,8 @@ android {
                 "META-INF/LICENSE.txt",
                 "META-INF/NOTICE",
                 "META-INF/NOTICE.txt",
-                "kotlin/**",
-                "**.properties",
-                "**.bin"
+                "META-INF/*.properties",
+                "kotlin/**"
             )
         }
         jniLibs {
